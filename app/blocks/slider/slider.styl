@@ -2,7 +2,7 @@
     position relative
     font-family $ff-Montserrat
     background-color $c-white-pink
-    height 100vw
+    height 100vh
     overflow-x hidden
 
     &__container
@@ -16,20 +16,51 @@
         background-color $c-white
         border w(3) solid $c-pink
         border-radius w(30)
+        +below(768px)
+            height 90vh
 
     &__slider__item
+        width 100%
+        height w(760)
         padding w(65)
         display flex
         flex-direction row
-        justify-content space-between
+        justify-content flex-start
+        +below(768px)
+            height 100%
+            padding wm(70) wm(20)
 
-    &__wrap__item
-        padding-right w(30)
-        max-width w(440)
-        width 100%
+    &__wrap__user
+        position relative
+        width 40%
+        margin-right w(30)
+        display flex
+        flex-direction column
+        +below(768px)
+            width 100%
+            margin-right 0
+            align-items center
+    
+    &__wrap__expert
+        position relative
+        width 60%
+        display flex
+        flex-direction column
+        +below(768px)
+            display none
+            width 100%
+
+    &__line
+        width w(1)
+        max-height w(1100)
+        background-color $c-black
+        margin-right w(50)
+        +below(768px)
+            display none
 
     &__user__name,
     &__expert__name
+        margin-top w(10)
         color $c-pink
         font-family $ff-Montserrat
         font-size w(29)
@@ -38,9 +69,14 @@
         letter-spacing 0%
         text-align left
         text-transform uppercase
+        +below(768px)
+            margin-top wm(10)
+            font-size wm(25)
+            text-align center
 
     &__user__quest,
     &__expert__answer
+        margin-top w(10)
         color $c-black
         font-family $ff-Montserrat
         font-size w(21)
@@ -48,33 +84,105 @@
         line-height 160%
         letter-spacing 0%
         text-align left
+        +below(768px)
+            margin-top wm(10)
+            font-size wm(18)
+            text-align center
 
     &__expert__title
+        margin-top w(10)
         color $c-pink
         font-family $ff-Montserrat
-        font-size w(29)
+        font-size w(22)
         font-weight 700
         line-height 160%
         letter-spacing 0%
         text-align left
         text-transform uppercase
+        +below(768px)
+            margin-top wm(10)
+            font-size wm(25)
+            text-align center
+
+    &__user__photo
+        margin-top w(50)
+        width w(300)
+        height w(300)
+        img
+            width 100%
+        +below(768px)
+            margin-top wm(20)
+            width wm(300)
+            height wm(300) 
+
+    &__user__img
+        position absolute
+        bottom w(50)
+        left w(150)
+        width w(120)
+        img
+            width 100%
+        +below(768px)
+            display none
+
+    &__expert__img
+        position absolute
+        top 0
+        right 0
+        width w(67)
+        img
+            width 100%
+        +below(768px)
+            display none
+
+    &__link__mobile
+        display none
+        +below(768px)
+            display flex
+            flex-direction column
+            justify-content center
+            align-items center
+            cursor pointer
+
+    &__link__text
+        display none
+        +below(768px)
+            display block
+            margin-top wm(25)
+            color $c-pink
+            font-family $ff-Montserrat
+            font-size wm(25)
+            font-weight 500
+            line-height 160%
+            letter-spacing 0%
+            text-align center
+            text-transform uppercase
+
+    &__link__arrow
+        display none
+        +below(768px)
+            display block
+            width wm(20)
+            height wm(20)
+            border-top wm(3) solid $c-pink
+            border-right wm(3) solid $c-pink
+            transform rotate(135deg)
 
 
     &__wrap__button
         position absolute
         z-index 1
         top 50%
-        left 20%
-        max-width w(1150)
-        width 100%
+        left 10%
+        width 80%
         display flex
         flex-direction row
         justify-content space-between
         align-items center
         +below(768px)
-            max-width 90vw
-            top -20%
-            left 0%
+            width 90%
+            top wm(30)
+            left wm(35)
             z-index 2
 
     &__wrap__button-prev,
@@ -88,16 +196,22 @@
         img
             width 100%
         +below(768px)
-            width wm(30)
-            height wm(60)
+            width wm(50)
+            height wm(50)
 
     &__wrap__button-prev
         padding-top w(12)
         padding-left w(16)
+        +below(768px)
+            padding-top wm(15)
+            padding-left wm(15)
 
     &__wrap__button-next
         padding-top w(12)
         padding-left w(8)
+        +below(768px)
+            padding-top wm(15)
+            padding-left wm(10)
 
     &__arrow
         transform rotate(-135deg)
@@ -110,4 +224,16 @@
         width w(20)
         height w(20)
         border-top w(3) solid $c-pink
-        border-right w(3) solid $c-pink 
+        border-right w(3) solid $c-pink
+        +below(768px)
+            width wm(20)
+            height wm(20)
+            border-top wm(3) solid $c-pink
+            border-right wm(3) solid $c-pink
+
+.visible {
+    display block
+}
+.hidden {
+    display none    
+}
