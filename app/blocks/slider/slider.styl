@@ -1,0 +1,113 @@
+.slider
+    position relative
+    font-family $ff-Montserrat
+    background-color $c-white-pink
+    height 100vw
+    overflow-x hidden
+
+    &__container
+        position relative
+        padding w(150) 15%
+        +below(768px)
+            padding wm(15)
+
+    &__content
+        width 100%
+        background-color $c-white
+        border w(3) solid $c-pink
+        border-radius w(30)
+
+    &__slider__item
+        padding w(65)
+        display flex
+        flex-direction row
+        justify-content space-between
+
+    &__wrap__item
+        padding-right w(30)
+        max-width w(440)
+        width 100%
+
+    &__user__name,
+    &__expert__name
+        color $c-pink
+        font-family $ff-Montserrat
+        font-size w(29)
+        font-weight 500
+        line-height 160%
+        letter-spacing 0%
+        text-align left
+        text-transform uppercase
+
+    &__user__quest,
+    &__expert__answer
+        color $c-black
+        font-family $ff-Montserrat
+        font-size w(21)
+        font-weight 400
+        line-height 160%
+        letter-spacing 0%
+        text-align left
+
+    &__expert__title
+        color $c-pink
+        font-family $ff-Montserrat
+        font-size w(29)
+        font-weight 700
+        line-height 160%
+        letter-spacing 0%
+        text-align left
+        text-transform uppercase
+
+
+    &__wrap__button
+        position absolute
+        z-index 1
+        top 50%
+        left 20%
+        max-width w(1150)
+        width 100%
+        display flex
+        flex-direction row
+        justify-content space-between
+        align-items center
+        +below(768px)
+            max-width 90vw
+            top -20%
+            left 0%
+            z-index 2
+
+    &__wrap__button-prev,
+    &__wrap__button-next
+        width w(50)
+        height w(50)
+        cursor pointer
+        border w(3) solid $c-pink
+        border-radius 50%
+        background $c-white
+        img
+            width 100%
+        +below(768px)
+            width wm(30)
+            height wm(60)
+
+    &__wrap__button-prev
+        padding-top w(12)
+        padding-left w(16)
+
+    &__wrap__button-next
+        padding-top w(12)
+        padding-left w(8)
+
+    &__arrow
+        transform rotate(-135deg)
+
+    &__arrow__next
+        transform rotate(45deg)
+
+    &__arrow,
+    &__arrow__next
+        width w(20)
+        height w(20)
+        border-top w(3) solid $c-pink
+        border-right w(3) solid $c-pink 
